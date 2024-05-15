@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>黑名單清單</title>
+    <link href="assets/libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/blacklist.css">
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <a href="index.html">租客</a>
+        </div>
+        <div class="pages">
+            <a href="index.html">Home</a>
+            <a href="records.html">查詢紀錄</a>
+            <a class="active" href="blacklist.html">黑名單清單</a>
+            <!--<a href="member.html">會員管理</a>
+            <a href="login.html">登出</a>-->
+        </div>
+        <div class="burger-icon" id="ToggleMenu">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <div class="pages-mobile">
+            <div class="closeNav"><i class="fa-solid fa-times"></i></div>
+            <a href="index.html">Home</a>
+            <a href="records.html">查詢紀錄</a>
+            <a class="active" href="blacklist.html">黑名單清單</a>
+            <!-- <a href="member.html">會員管理</a>
+            <a href="login.html">登出</a>-->
+        </div>
+    </nav>
+    <div class="container">
+        <div id="List">
+            <h3 class="title">黑名單清單</h3>
+            <div class="tableArea">
+                <div class="result-container">
+                    <div class="header-row">
+                        <div class="header-cell">名字</div>
+                        <div class="header-cell">身分字號</div>
+                        <div class="header-cell">生日</div>
+                        <div class="header-cell">是否黑名單</div>
+                        <div class="header-cell">處理狀態</div>
+                        <div class="header-cell">原因</div>
+                        <div class="header-cell">刪除</div>
+                    </div>
+                    <div class="content"></div>
+                </div>
+                <div class="pageBtn"></div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/libs/jquery.min.js"></script>
+    <script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/blacklist.js"></script>
+</body>
+
+</html>

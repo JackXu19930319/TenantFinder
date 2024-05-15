@@ -1,0 +1,174 @@
+.modal-footer {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.modal-footer button {
+  width: 100%;
+}
+
+/* 表格 */
+.result-container {
+  display: block;
+  border: 1px solid #888;
+  border-radius: 20px;
+}
+
+.header-row {
+  display: grid;
+  grid-template-columns: 120px 1fr 150px 1fr;
+  color: #555;
+  border-bottom: 1px solid #888;
+  font-weight: bold;
+  border-radius: 17px 17px 0 0;
+  font-size: 1.2rem;
+}
+
+.data-row {
+  display: grid;
+  grid-template-columns: 120px 1fr 150px 1fr;
+}
+
+.header-cell,
+.data-cell {
+  padding: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.header-cell:not(:last-child),
+.data-cell:not(:last-child) {
+  border-right: 1px solid #888;
+}
+
+.data-cell i {
+  color: #535c48;
+}
+
+.data-row:nth-of-type(even) {
+  background-color: #f9f1df;
+}
+
+.data-row:last-of-type {
+  border-radius: 0 0 20px 20px;
+}
+
+.tableBtns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.tableBtns .btn {
+  flex: 1;
+  margin: 0;
+}
+
+#List .data-cell:last-child {
+  justify-content: center;
+}
+
+#List .data-row:nth-child(even) {
+  background-color: #f9f1df;
+}
+
+#List .data-row:not(:last-child) {
+  border-bottom: 1px solid #888;
+}
+
+#List .data-row.undone {
+  background-color: transparent;
+  cursor: not-allowed;
+}
+
+#List select.form-control {
+  margin: 0;
+  padding: 0.2rem;
+}
+
+.controlBtn {
+  display: flex;
+  /* flex-direction: column; */
+  gap: 5px;
+}
+
+.controlBtn button {
+  font-size: 0.9rem;
+  width: 100%;
+}
+
+.pageBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+  #List .header-row {
+    font-size: 1rem;
+  }
+  .header-cell,
+  .data-cell {
+    padding: 10px;
+  }
+  .header-row,
+  .data-row {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+@media (max-width: 578px) {
+  #List .header-row {
+    display: none;
+  }
+
+  #List .data-row {
+    grid-template-columns: 1fr;
+    position: relative;
+    padding: 10px;
+  }
+
+  #List .data-row.first {
+    border-radius: 20px 20px 0 0;
+  }
+
+  #List .data-row.first.only {
+    border-radius: 20px;
+  }
+
+  #List .data-cell {
+    padding: 5px 10px;
+    gap: 20px;
+  }
+
+  #List .data-cell:not(:last-child) {
+    border-right: none;
+  }
+
+  #List .data-cell:before {
+    font-weight: bold;
+    color: #535c48;
+    width: 40px;
+    flex: none;
+  }
+
+  #List .data-cell:nth-of-type(1):before {
+    content: "姓名: ";
+  }
+
+  #List .data-cell:nth-of-type(2):before {
+    content: "帳號: ";
+  }
+
+  #List .data-cell:nth-of-type(3):before {
+    content: "權限: ";
+  }
+
+  #List .data-cell:nth-of-type(4):before {
+    content: "操作: ";
+  }
+}

@@ -1,0 +1,22 @@
+name: front_end_deploy
+
+on:
+  push:
+    branches:
+      - front_end
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: SSH into Linode and deploy
+        run: |
+          sshpass -p "${{ secrets.SSH_PASSWORD }}" ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_IP_ADDRESS }} << EOF
+            cd rentGuardFilterSystem/
+            git checkout front_end
+            git pull origin front_end
+            docker compose -f start.yml up --build -d
+          EOF

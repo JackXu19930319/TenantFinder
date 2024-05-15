@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首頁</title>
+    <link href="assets/libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cropperjs@1.5.11/dist/cropper.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/index.css?v=20231121">
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <a href="index.html">污點查找</a>
+        </div>
+        <div class="pages">
+            <a class="active" href="index.html">home</a>
+            <a href="records.html">查詢紀錄</a>
+            <a href="blacklist.html">黑名單清單</a>
+            <!--<a href="member.html">會員管理</a>
+            <a href="login.html">登出</a>-->
+        </div>
+        <div class="burger-icon" id="ToggleMenu">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <div class="pages-mobile">
+            <div class="closeNav"><i class="fa-solid fa-times"></i></div>
+            <a class="active" href="index.html">Home</a>
+            <a href="records.html">查詢紀錄</a>
+            <a href="blacklist.html">黑名單清單</a>
+            <!--<a href="member.html">會員管理</a>
+            <a href="login.html">登出</a>-->
+        </div>
+    </nav>
+    <div class="container">
+        <div id="UploadInfo">
+            <form>
+                <div class="form-group">
+                    <label for="identity">身分證字號</label>
+                    <input type="text" class="form-control" id="identity">
+                </div>
+                <div class="form-group">
+                    <label for="name">姓名</label>
+                    <input type="text" class="form-control" id="name">
+                </div>
+                <div class="form-group">
+                    <label for="year">生日</label>
+                    <div class="birthdayInput">
+                        <select class="form-control" id="year" name="year"></select><span>年</span>
+                        <select class="form-control" id="month" name="month"></select><span>月</span>
+                        <select class="form-control" id="day" name="day"></select><span>日</span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="UploadFrontImage">身分證正面</label>
+                        <label id="FrontImagePreview" for="UploadFrontImage"
+                            class="image-preview">
+                            <b>
+                                <span>
+                                    +
+                                </span>
+                                點擊上傳
+                            </b>
+                            <b style="color: red">
+                                文件請勿反光以利辨識
+                            </b>
+                        </label>
+                        <input type="file" id="UploadFrontImage" accept="image/*" class="d-none">
+                    </div>
+                    <!--<div class="col-md-6 mt-3 mt-md-0">
+                        <label for="UploadBackImage">身分證反面</label>
+                        <label id="BackImagePreview" for="UploadBackImage"
+                            class="image-preview"><b><span>+</span>點擊上傳</b></label>
+                        <input type="file" id="UploadBackImage" accept="image/*" class="d-none">
+                    </div>-->
+                </div>
+
+                <div class="searchBtnWrap">
+                    <button class="btn btn-primary">查詢</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="loading-overlay">
+        <div class="loading-spinner"></div>
+    </div>
+    <div class="modal overlay" id="cropperModal">
+        <div class="modal-wrapper">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div id="imageToCrop" class="cropper-container"></div>
+                        <div class="btnWrap">
+                            <button class="btn btn-secondary" id="Close">關閉</button>
+                            <button class="btn btn-primary" id="cropImage">裁切</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/libs/jquery.min.js"></script>
+    <script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/cropperjs@1.5.11/dist/cropper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/index.js"></script>
+</body>
+
+</html>

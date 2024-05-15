@@ -1,0 +1,24 @@
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#Login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  max-width: 350px;
+  margin: 0 auto;
+}
+
+#Login .form-group {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+#Login button {
+  width: 100%;
+}

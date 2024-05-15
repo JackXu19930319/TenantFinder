@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>會員管理</title>
+    <link href="assets/libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/member.css">
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <a href="index.html">租客</a>
+        </div>
+        <div class="pages">
+            <a href="index.html">Home</a>
+            <a href="records.html">查詢紀錄</a>
+            <a href="blacklist.html">黑名單清單</a>
+            <a class="active" href="member.html">會員管理</a>
+            <a href="login.html">登出</a>
+        </div>
+        <div class="burger-icon" id="ToggleMenu">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <div class="pages-mobile">
+            <div class="closeNav"><i class="fa-solid fa-times"></i></div>
+            <a href="index.html">Home</a>
+            <a href="records.html">查詢紀錄</a>
+            <a href="blacklist.html">黑名單清單</a>
+            <a class="active" href="member.html">會員管理</a>
+            <a href="login.html">登出</a>
+        </div>
+    </nav>
+    <div class="container">
+        <h3 class="title">使用者清單</h3>
+        <button class="btn btn-primary mb-3" id="CreateAccountBtn"><i class="fa-solid fa-plus"></i> 新增帳號</button>
+        <div id="List">
+            <div class="tableArea">
+                <div class="result-container">
+                    <div class="header-row">
+                        <div class="header-cell">姓名</div>
+                        <div class="header-cell">帳號</div>
+                        <div class="header-cell">權限</div>
+                        <div class="header-cell">操作</div>
+                    </div>
+                    <div class="content"></div>
+                </div>
+                <div class="pageBtn"></div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" tabindex="-1" role="dialog" id="UpdatePassword">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">修改密碼</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="Password" class="form-label">密碼</label>
+                            <input class="form-control" id="Password" placeholder="請輸入新密碼">
+                        </div>
+                        <div class="mb-3">
+                            <label for="Confirm" class="form-label">確認密碼</label>
+                            <input class="form-control" id="Confirm" placeholder="請再輸入一次新密碼">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
+                    <button type="button" class="btn btn-primary" id="SubmitBlacklist">確定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" tabindex="-1" role="dialog" id="CreateAccount">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">新增帳號</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="Name" class="form-label">姓名</label>
+                            <input class="form-control" id="Name" placeholder="請輸入姓名">
+                        </div>
+                        <div class="mb-3">
+                            <label for="Account" class="form-label">帳號</label>
+                            <input class="form-control" id="Account" placeholder="請輸入帳號">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">權限</label>
+                            <select class="form-control" name>
+                                <option value="">主管</option>
+                                <option value="">管理者</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
+                    <button type="button" class="btn btn-primary" id="SubmitBlacklist">確定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/libs/jquery.min.js"></script>
+    <script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/member.js"></script>
+</body>
+
+</html>
